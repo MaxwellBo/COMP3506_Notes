@@ -37,6 +37,17 @@
     return no\\\\
     Worst-case time: $f_2(n)=2+6\log_2n$
 
+    \section{Big-O}
+    We say that $f(n)$ grows asymptotically no faster than $g(n)$ if there is a constant $c_1>0$ such that $f(n)\leq c_1\cdot g(n)$ and holds for all $n$ at least a constant $c_2$. This is denoted by $f(n)=O(g(n))$.
+    \subsection{Example}
+    $1000\log_2n=O(n)$,$n\neq O(10000\log_2n)$\\
+    $\log_{b_1}n=O(\log_{b_2}n)$ for any constants $b_1>1$ and $b_2>1$.
+    Therefore $f(n)=2+6\log_2n$ can be represented; $f(n)=O(\log n)$
+    \section{Big-$\Omega$}
+    If $g(n)=O(f(n))$, then $f(n)=\Omega(g(n))$ to indicate that $f(n)$ grows asymptotically no slower than $g(n)$. We say that $f(n)$ grows asymptotically no slower than $g(n)$ if $c_1>0$ such $f(n)\geq c_1\cdot g(n)$ for $n>c_2$; denoted by $f(n)=\Omega(g(n))$
+    \section{Big-$\Theta$}
+    If $f(n)=O(g(n))$ and $f(n)=\Omega(g(n))$, then $f(n)=\Theta(g(n))$ to indicate that $f(n)$ grows asymptotically as fast as $g(n)$
+
 
 \end{multicols}
 
