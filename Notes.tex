@@ -12,7 +12,31 @@
 \begin{document}
 \begin{multicols}{3}
 
-\section{Section Header}
+    \section{RAM Model}
+    \subsection{Memory}
+    Infinite sequence of cells, contains $w$ bits. Every cell has an address starting at 1
+    \subsection{CPU}
+    32 registers of width $w$ bits.
+    \subsubsection{Operations}
+    Set value to register (constant or from other register). Take two integers from other registers and store the result of; $a+b$, $a-b$, $a\cdot b$, $a/b$. Take two registers and compare them; $a<b$, $a=b$, $a>b$. Read and write from memory.
+    \subsection{Definitions}
+    An algorithm is a set of atomic operations. It's cost is is the number of atomic operations. A word is a sequence of $w$ bits
+    \section{Worst-case}
+    Worst-case cost of an algorithm is the longest possible running time of input size $n$
+    \section{Dictionary search}
+    let $n$ be register 1, and $v$ be register 2\\
+    register $left\rightarrow1$, $right\rightarrow1$\\
+    while $left\leq right$\\
+    \indent register $mid\rightarrow(left+right)/2$\\
+    \indent if the memory cell at address $mid=v$ then\\
+    \indent\indent return yes\\
+    \indent else if memory cell at address $mid>v$ then\\
+    \indent\indent $right=mid-1$\\
+    \indent else\\
+    \indent\indent $left=mid+1$\\
+    return no\\\\
+    Worst-case time: $f_2(n)=2+6\log_2n$
+
 
 \end{multicols}
 
