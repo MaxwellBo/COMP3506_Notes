@@ -106,6 +106,15 @@ Step 1 and 3 take O(U) time, while Step 2 O(n) time. Therefore running time is O
 RANDOM(x, y) returns an integer between x and y chosen uniformly at random
 
 
+\section{A Universal Function}
+\begin{itemize}
+\item Pick a prime number $p$ such that
+\item $p \geqslant m$ and $p \geqslant$ any possible integer $k$
+\item Choose a number $\alpha$ uniformly at random from $1, ..., p-1$
+\item Choose a number $\beta$ uniformly at random from $1, ..., p-1$
+\item Construct a hash function: $h(k) = 1 + ((\alpha k + \beta) \cdot mod(p)) \cdot mod(m)$
+
+\end{itemize}
 \end{multicols}
 
 \end{document}
