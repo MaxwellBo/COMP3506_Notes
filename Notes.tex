@@ -44,7 +44,8 @@
     Worst-case time: $f_2(n)=2+6\log_2n$
 
     \section{Big-O}
-    We say that $f(n)$ grows asymptotically no faster than $g(n)$ if there is a constant $c_1>0$ such that $f(n)\leq c_1\cdot g(n)$ and holds for all $n$ at least a constant $c_2$. This is denoted by $f(n)=O(g(n))$.
+    We say that $f(n)$ grows asymptotically no faster than $g(n)$ if there is a constant $c_1>0$ such that $f(n)\leq c_1\cdot g(n)$ and holds for all $n$ at least a constant $c_2$. This is denoted by $f(n)=O(g(n))$.\\
+    $\lim_{n\rightarrow\infty}\frac{f(n)}{g(n)}=c$ for some constant $c$
     \subsection{Example}
     $1000\log_2n=O(n)$,\\$n\neq O(10000\log_2n)$\\
     $\log_{b_1}n=O(\log_{b_2}n)$ for any constants $b_1>1$ and $b_2>1$.
@@ -100,18 +101,12 @@
     The possible integers is finite under the RAM Model. Max: $2^w-1$. Therefore $p$ exists between $[2^w,w^{w+1}]$.
     \subsection{Timing}
     Space: $O(n)$, Preprocessing time: $O(n)$, Query time: $O(1)$ in expectation
-
-    \section{Week 3}
-    If $f(n) = O(g(n))$, we have $\lim_{n \to \infty} \dfrac{f_1(n)}{g_1(n)} = c$ for some constant $c$. 
     
     \section{Week 3 - Extra}
-    
-    \begin{itemize}
-        \item When using `Direction 1: Constant Finding' setting $c_1$, always set it to match the coefficent on the LHS so that you can cancel.
-        \item When trying to get a contradiction, try and isolate an $x \cdot c_1$ on the RHS, where $x \in \mathbb{Z}$, such that an expression that contains $n$ is $\leqslant x \cdot c_1$
-        \item Make judicious use of the $max$ function when adding functions together
-        \item If $f_1(n) + f_2(n) \leqslant c_1 \cdot g_1(n) +c'_1 \cdot g_2(n) \leqslant max\{c_1 , c'_1 \} \cdot (g_1(n) + g_2(n))$, for all $n \geqslant max\{c_2, c'_2\}$.
-    \end{itemize}
+    When using `Direction 1: Constant Finding' setting $c_1$, always set it to match the coefficent on the LHS so that you can cancel.\\
+    When trying to get a contradiction, try and isolate an $x \cdot c_1$ on the RHS, where $x \in \mathbb{Z}$, such that an expression that contains $n$ is $\leqslant x \cdot c_1$\\
+    Make judicious use of the $max$ function when adding functions together
+    If $f_1(n) + f_2(n) \leqslant c_1 \cdot g_1(n) +c'_1 \cdot g_2(n) \leqslant max\{c_1 , c'_1 \} \cdot (g_1(n) + g_2(n))$, for all $n \geqslant max\{c_2, c'_2\}$.\\
     
     \section{Week 4}
     \subsection{The Master Theorem}
