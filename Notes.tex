@@ -113,16 +113,13 @@
     \section{The Master Theorem}
     \subsection{Theorem 1}
     $n+\frac{n}{c}+\frac{n}{c^2}+\ldots+\frac{n}{c^h}=O(n)$
-    
+    \subsection{Theorem 2}
     Let $f(n)$ be a function that returns a positive value for every integer $n>0$. We know:
-    
     \begin{align*}
         f(1) & \leqslant c_1\\
         f(n) & \leqslant \alpha \cdot f(\lceil n / \beta \rceil) + c_2 \cdot n^{\gamma} \text{ for } n \geqslant 2
     \end{align*}
-    
     where $\alpha, \beta, \gamma, c_1$ and $c_2$ are positive constants. Then:
-    
     \begin{itemize}
         \item If $log_{b} \alpha < \gamma$ then $f(n) = O(n^\gamma)$
         \item If $log_{b} \alpha = \gamma$ then $f(n) = O(n^\gamma \cdot log(n))$
