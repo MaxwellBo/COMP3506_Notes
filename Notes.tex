@@ -74,6 +74,14 @@
     \subsection{Queue}
     The queue has two operations; En-queue (Inserts a new element into the queue), De-queue (Removes the least recently used element from the queue and returns it). Since a queue is just a linkedlist, push and pop use $O(1)$ time.
 
+    \section{Dynamic Arrays}
+    \subsection{Naive Algorithm}
+    \textbf{insert(e):} Increase n by 1, initial an array A' of length n, copy all n-1 of A to A', Set A'[n]=e, Destroy A.\\
+    This takes $O(n^2)$ time to do $n$ insertions.
+    \subsection{A Better Algorithm}
+    \textbf{insert(e):} Append e to A and increase n by 1. If A is full; Create A' of length 2n, Copy A to A', Destroy A and replace with A'\\
+    This takes $O(n)$ time to do $n$ insertions.
+
 \end{multicols}
 
 \end{document}
