@@ -82,6 +82,19 @@
     \textbf{insert(e):} Append e to A and increase n by 1. If A is full; Create A' of length 2n, Copy A to A', Destroy A and replace with A'\\
     This takes $O(n)$ time to do $n$ insertions.
 
+    \section{Hashing}
+    The main idea of hashing is to divide the dataset S into a number m of disjoint subsets such that only one subset needs to be searched to answer any query.
+    \subsection{Pre-processing}
+    Create an array of linkedlist($L$) from 1 to $m$ and an array $H$ of length $m$. Store the heads of $L$ in $H$, for all $x\in S$; calculate hash value ($h(x)$), insert $x$ into $L_{h(x)}$. We will always choose $m=O(n)$, so $O(n+m)=O(n)$
+    \subsection{Querying}
+    Query with value $v$, calculate the hash value $h(v)$, Look for $v$ in $L_h(v)$. Query time: $O(\mid L_{h(v)}\mid)$
+    \subsection{Hash Function}
+    Pick a prime $p$; $p\geq m$, $p\geq$ any integer $k$. Choose $\alpha$ and $\beta$ uniformly random from $1,\ldots,p-1$. Therefore: $h(k)=1+(((\alpha k+\beta)\mod p)\mod m)$
+    \subsubsection{Any Possible Integer}
+    The possible integers is finite under the RAM Model. Max: $2^w-1$. Therefore $p$ exists between $[2^w,w^{w+1}]$.
+    \subsection{Timing}
+    Space: $O(n)$, Preprocessing time: $O(n)$, Query time: $O(1)$ in expectation
+
 \end{multicols}
 
 \end{document}
