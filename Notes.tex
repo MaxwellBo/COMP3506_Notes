@@ -1,12 +1,16 @@
-\documentclass[5pt,a4paper]{article}
+\documentclass[1pt,a4paper]{article}
 
 \usepackage{amsmath} % Essential math and alignment (use `&` to align operators')
 % Google for more info
 \usepackage{amssymb} % Essential symbols for sets and stuff
 
-\usepackage[margin=0.5in]{geometry} % Essential document config
+\usepackage[margin=0.3in]{geometry} % Essential document config
 
 \usepackage[compact]{titlesec}
+%\usepackage{sectsty}
+%\sectionfont{\fontsize{7}{9}\selectfont}
+%\subsectionfont{\fontsize{6}{8}\selectfont}
+%\subsubsectionfont{\fontsize{5}{7}\selectfont}
 
 \usepackage{multicol} % Imports the column
 \setlength{\columnseprule}{0.4pt} % Divide size
@@ -62,7 +66,7 @@
     \textbf{Step 3:} Clear A, For $x\in[1,U]$; If B[x] = 0 continue, otherwise append x to A
     \subsubsection{Analysis}
     Step 1 and 3 take O(U) time, while Step 2 O(n) time. Therefore running time is O(n + U) = O(U).
-    
+
     \section{Random}
     RANDOM(x, y) returns an integer between x and y chosen uniformly at random
 
@@ -97,6 +101,54 @@
     \subsection{Timing}
     Space: $O(n)$, Preprocessing time: $O(n)$, Query time: $O(1)$ in expectation
 
+    \section{Week 3}
+    If $f(n) = O(g(n))$, we have $\lim_{n \to \infty} \dfrac{f_1(n)}{g_1(n)} = c$ for some constant $c$. 
+    
+    \section{Week 3 - Extra}
+    
+    \begin{itemize}
+        \item When using `Direction 1: Constant Finding' setting $c_1$, always set it to match the coefficent on the LHS so that you can cancel.
+        \item When trying to get a contradiction, try and isolate an $x \cdot c_1$ on the RHS, where $x \in \mathbb{Z}$, such that an expression that contains $n$ is $\leqslant x \cdot c_1$
+        \item Make judicious use of the $max$ function when adding functions together
+        \item If $f_1(n) + f_2(n) \leqslant c_1 \cdot g_1(n) +c'_1 \cdot g_2(n) \leqslant max\{c_1 , c'_1 \} \cdot (g_1(n) + g_2(n))$, for all $n \geqslant max\{c_2, c'_2\}$.
+    \end{itemize}
+    
+    \section{Week 4}
+    \subsection{The Master Theorem}
+    
+    Let $f(n)$ be a function that returns a positive value for every integer $n>0$. We know:
+    
+    \begin{align*}
+        f(1) & \leqslant c_1\\
+        f(n) & \leqslant \alpha \cdot f(\lceil n / \beta \rceil) + c_2 \cdot n^{\gamma} \text{ for } n \geqslant 2
+    \end{align*}
+    
+    where $\alpha, \beta, \gamma, c_1$ and $c_2$ are positive constants. Then:
+    
+    \begin{itemize}
+        \item If $log_{b} \alpha < \gamma$ then $f(n) = O(n^\gamma)$
+        \item If $log_{b} \alpha = \gamma$ then $f(n) = O(n^\gamma \cdot log(n))$
+        \item If $log_{b} \alpha > \gamma$ then $f(n) = O(n^{log_\beta(a)})$
+    
+    \end{itemize}
+    \section{Week 5}
+    
+    TODO
+    
+    \section{A Universal Function}
+    \begin{itemize}
+        \item Pick a prime number $p$ such that
+        \item $p \geqslant m$ and $p \geqslant$ any possible integer $k$
+        \item Choose a number $\alpha$ uniformly at random from $1, ..., p-1$
+        \item Choose a number $\beta$ uniformly at random from $1, ..., p-1$
+        \item Construct a hash function: $h(k) = 1 + ((\alpha k + \beta) \cdot mod(p)) \cdot mod(m)$
+    
+            \section{SE Set 3}
+            \begin{itemize}
+                \item Find out how many times a recurrence takes to terminate, and then proceed to eyeball the time complexity
+            \end{itemize}
+    
+    \end{itemize}
 \end{multicols}
 
 \end{document}
