@@ -48,6 +48,22 @@
     \section{Big-$\Theta$}
     If $f(n)=O(g(n))$ and $f(n)=\Omega(g(n))$, then $f(n)=\Theta(g(n))$ to indicate that $f(n)$ grows asymptotically as fast as $g(n)$
 
+    \section{Sort}
+    \subsection{Merge Sort}
+    Divide the array into two parts, sort the individual arrays then combine the arrays together.
+    $f(n)=O(n\log n)$.\\
+    This is the fastest sorting time possible (apart from $O(n\log\log n)$
+    \subsection{Counting Sort}
+    A set S of n integers and every integer is in the range [1, U]. (all integers are distinct)\\
+    \textbf{Step 1:} Let A be the array storing S. Create array B of length U. Set B to zero.\\
+    \textbf{Step 2:} For $i\in [1,n]$; Set x to A[i], Set B[x] = 1\\
+    \textbf{Step 3:} Clear A, For $x\in[1,U]$; If B[x] = 0 continue, otherwise append x to A
+    \subsubsection{Analysis}
+    Step 1 and 3 take O(U) time, while Step 2 O(n) time. Therefore running time is O(n + U) = O(U).
+    
+    \section{Random}
+    RANDOM(x, y) returns an integer between x and y chosen uniformly at random
+
 
 \end{multicols}
 
