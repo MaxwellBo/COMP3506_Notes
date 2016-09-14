@@ -7,6 +7,8 @@
 \usepackage[margin=0.3in]{geometry} % Essential document config
 
 \usepackage[compact]{titlesec}
+\titleformat*{\section}{\normalsize\bfseries\scshape}
+\titleformat*{\subsection}{\small\bfseries}
 %\usepackage{sectsty}
 %\sectionfont{\fontsize{7}{9}\selectfont}
 %\subsectionfont{\fontsize{6}{8}\selectfont}
@@ -132,6 +134,11 @@
 
     \section{SE Set 3}
     Find out how many times a recurrence takes to terminate, and then proceed to eyeball the time complexity
+
+    \section{Hierarchy}
+    $$O(1) \leqslant O(log(n)) \leqslant O(n^c)$$ 
+$$\leqslant O(n) \leqslant O(n^2)$$ 
+$$\leqslant O(n^c) \leqslant O(c^n)$$
     
 \end{multicols}
 
