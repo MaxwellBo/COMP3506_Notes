@@ -7,6 +7,8 @@
 \usepackage[margin=0.3in]{geometry} % Essential document config
 
 \usepackage[compact]{titlesec}
+\titleformat*{\section}{\normalsize\bfseries\scshape}
+\titleformat*{\subsection}{\small\bfseries}
 %\usepackage{sectsty}
 %\sectionfont{\fontsize{7}{9}\selectfont}
 %\subsectionfont{\fontsize{6}{8}\selectfont}
@@ -103,25 +105,23 @@
     The possible integers is finite under the RAM Model. Max: $2^w-1$. Therefore $p$ exists between $[2^w,w^{w+1}]$.
     \subsection{Timing}
     Space: $O(n)$, Preprocessing time: $O(n)$, Query time: $O(1)$ in expectation
-    
+
     \section{Week 3 - Extra}
     When using `Direction 1: Constant Finding' setting $c_1$, always set it to match the coefficent on the LHS so that you can cancel.\\
     When trying to get a contradiction, try and isolate an $x \cdot c_1$ on the RHS, where $x \in \mathbb{Z}$, such that an expression that contains $n$ is $\leqslant x \cdot c_1$\\
     Make judicious use of the $max$ function when adding functions together
     If $f_1(n) + f_2(n) \leqslant c_1 \cdot g_1(n) +c'_1 \cdot g_2(n) \leqslant max\{c_1 , c'_1 \} \cdot (g_1(n) + g_2(n))$, for all $n \geqslant max\{c_2, c'_2\}$.\\
     
-    \section{Week 4}
-    \subsection{The Master Theorem}
-    
+    \section{The Master Theorem}
+    \subsection{Theorem 1}
+    $n+\frac{n}{c}+\frac{n}{c^2}+\ldots+\frac{n}{c^h}=O(n)$
+    \subsection{Theorem 2}
     Let $f(n)$ be a function that returns a positive value for every integer $n>0$. We know:
-    
     \begin{align*}
         f(1) & \leqslant c_1\\
         f(n) & \leqslant \alpha \cdot f(\lceil n / \beta \rceil) + c_2 \cdot n^{\gamma} \text{ for } n \geqslant 2
     \end{align*}
-    
     where $\alpha, \beta, \gamma, c_1$ and $c_2$ are positive constants. Then:
-    
     \begin{itemize}
         \item If $log_{b} \alpha < \gamma$ then $f(n) = O(n^\gamma)$
         \item If $log_{b} \alpha = \gamma$ then $f(n) = O(n^\gamma \cdot log(n))$
