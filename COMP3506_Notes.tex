@@ -1,5 +1,4 @@
-\documentclass[fontsize=4pt]{scrartcl}
-\usepackage{lmodern}
+\documentclass[fontsize=10pt,a4paper]{article}
 \usepackage{amsmath} % Essential math and alignment (use `&` to align operators')
 % Google for more info
 \usepackage{amssymb} % Essential symbols for sets and stuff
@@ -142,116 +141,113 @@
     $$\leqslant O(n) \leqslant O(n^2)$$ 
     $$\leqslant O(n^c) \leqslant O(c^n)$$
 
-    \section{Trees}
+    % \section{Trees}
 
-    An undirected graph if a pair of $(V, E)$ where:
+    % An undirected graph if a pair of $(V, E)$ where:
 
-    \begin{itemize}
-        \item $V$ is a set of elements, eac of which is called a node
-        \item E is a set of pairs $u, v$ such that:
-        \begin{itemize}
-            \item $u$ and $v$ are distint nodes;
-            \item If $(u, v)$ is in $E$, then $(v, u)$ is also in $E$ - we say that there is an edge between $u$ and $v$.
-        \end{itemize} 
-    \end{itemize}
+    % \begin{itemize}
+    %     \item $V$ is a set of elements, eac of which is called a node
+    %     \item E is a set of pairs $u, v$ such that:
+    %     \begin{itemize}
+    %         \item $u$ and $v$ are distint nodes;
+    %         \item If $(u, v)$ is in $E$, then $(v, u)$ is also in $E$ - we say that there is an edge between $u$ and $v$.
+    %     \end{itemize} 
+    % \end{itemize}
 
-    A node may also be called a vertex. We will refer to $V$as the vertex set or the node set of the graph, and $E$ the edge set.
+    % A node may also be called a vertex. We will refer to $V$as the vertex set or the node set of the graph, and $E$ the edge set.
 
-    For example, there is a graph $(V, E)$ wher 
+    % For example, there is a graph $(V, E)$ wher 
 
-    $V = \{ a, b, c, d, e\}$
-    $E = \{ (a, b),(b, a),(b, c),(c, b),(a, d),(d, a),(b, d), (d, b), (c, e),(e, c) \}$
+    % $V = \{ a, b, c, d, e\}$
+    % $E = \{ (a, b),(b, a),(b, c),(c, b),(a, d),(d, a),(b, d), (d, b), (c, e),(e, c) \}$
 
-    The number of edges equals $|E| / 2 = 10 / 2 = 5$
+    % The number of edges equals $|E| / 2 = 10 / 2 = 5$
 
-    Let $G = (V, E)$ be an undirected graph. A path in $G$ is a sequence of nodes $(v_1, v_2, ..., v_k)$ such that
+    % Let $G = (V, E)$ be an undirected graph. A path in $G$ is a sequence of nodes $(v_1, v_2, ..., v_k)$ such that
 
-    \begin{itemize}
-        \item For every $i \in [1, k-1]$, there is an edge between $v_i$ and $v_{i+1}$
-    \end{itemize}
+    % \begin{itemize}
+    %     \item For every $i \in [1, k-1]$, there is an edge between $v_i$ and $v_{i+1}$
+    % \end{itemize}
 
-    A cycle in $G$ is a path $(v_1, v_2, ..., v_k)$ such that
+    % A cycle in $G$ is a path $(v_1, v_2, ..., v_k)$ such that
 
-    \begin{itemize}
-        \item $k \geqslant 4$
-        \item $v_1 = v_k$
-        \item $v_1, v_2, ..., v_k$ are distinct
-    \end{itemize}
-
-
-    An undirected graph $G = (V, E)$ is connected if, for any two distinct vertices $u$ and $v$, $G$ has a path from $u$ to $v$.
-
-    A tree is connected undirected graph contains no cycles.
-
-    A tree with $n$ nodes has $n - 1$ edges.
-
-    Given any tree $T$ and anarbitrary node $r$, we can allocate a level to each node as follows:
-
-    \begin{itemize}
-        \item $r$ is the root of $T$ - this is leel 0 of the tree
-        \item All the nodes that are $n$ edge away from $r$ constitute level $n$ of the tree
-    \end{itemize}
-
-    The number of levels is called the height of the tree. We say that $T$ has been rooted once a root has been designated.
-
-    Consider a tree $T$ that has been rooted.
-
-    Let $u$ and $v$ be two nodes in $T$. We say that $u$ is the parent of $v$ if:
-
-    \begin{itemize}
-        \item $v$ is at the level immediately below $u$
-        \item There is an edge below $u$ and $v$
-    \end{itemize}
-
-    Accordingly, we say that $v$ is a child of $u$.
+    % \begin{itemize}
+    %     \item $k \geqslant 4$
+    %     \item $v_1 = v_k$
+    %     \item $v_1, v_2, ..., v_k$ are distinct
+    % \end{itemize}
 
 
-    Let $u$ and $v$ be two nodes in $T$. We say that $u$ is the ancestor of $v$ if one of the following holds:
+    % An undirected graph $G = (V, E)$ is connected if, for any two distinct vertices $u$ and $v$, $G$ has a path from $u$ to $v$.
 
-    \begin{itemize}
-        \item $v = u$
-        \item $u$ is the parent of an $v$
-        \item $u$ s the parent of an ancestor of $v$
-    \end{itemize}
+    % A tree is connected undirected graph contains no cycles.
 
-    Accordingly, we say that $v$ is a decendant of $u$.
+    % A tree with $n$ nodes has $n - 1$ edges.
 
-    In particular, if $u \neq v$, we say that $u$ is a proper ancestor of $v$, and likewise, $v$ is a proper descendant of $u$.
+    % Given any tree $T$ and anarbitrary node $r$, we can allocate a level to each node as follows:
 
-    Let $u$ be a node in a rooted tree $T$. The subtree of $u$ is the part of $T$ that is ``at or below" $u$.
+    % \begin{itemize}
+    %     \item $r$ is the root of $T$ - this is leel 0 of the tree
+    %     \item All the nodes that are $n$ edge away from $r$ constitute level $n$ of the tree
+    % \end{itemize}
 
-    In a rooted tree, a node is a leaf node if it has no children; otherwise it is an internal node.
+    % The number of levels is called the height of the tree. We say that $T$ has been rooted once a root has been designated.
 
-    Let $T$ be a rooted tree where every internal node has at least 2 child nodes. If $m$ is the number of leaf nodes, then the number of internal nodes is at least $m-1$.
+    % Consider a tree $T$ that has been rooted.
 
-    A $k$-ary tree is a rooted tree where every internal node has at most $k$ child nodes.
+    % Let $u$ and $v$ be two nodes in $T$. We say that $u$ is the parent of $v$ if:
 
-    A $2$-ary tree is called a binary tree.
+    % \begin{itemize}
+    %     \item $v$ is at the level immediately below $u$
+    %     \item There is an edge below $u$ and $v$
+    % \end{itemize}
 
-    Consider a binary tree with height $h$. Its level $n$ $(0 \leqslant n \leqslant h - 1)$ is full if it contains $2^n$. 
-
-    A binary tree of height $h$ is complete if:
-
-    \begin{itemize}
-        \item Levels $0, 1, ..., h-2$ are all full
-        \item At Level $h-1$, the leaf nodes are "as far left as possible"
-    \end{itemize}
-
-    A complete tree with $n \geqslant 2$ nodes has height $O(\log n)$
+    % Accordingly, we say that $v$ is a child of $u$.
 
 
-    \dirtree{%
-        .1 debug.
-        .2 filename.
-        .2 modules.
-        .3 module.
-        .3 module.
-        .3 module.
-        .2 level.
-        }
+    % Let $u$ and $v$ be two nodes in $T$. We say that $u$ is the ancestor of $v$ if one of the following holds:
 
-    % TO
+    % \begin{itemize}
+    %     \item $v = u$
+    %     \item $u$ is the parent of an $v$
+    %     \item $u$ s the parent of an ancestor of $v$
+    % \end{itemize}
 
+    % Accordingly, we say that $v$ is a decendant of $u$.
+
+    % In particular, if $u \neq v$, we say that $u$ is a proper ancestor of $v$, and likewise, $v$ is a proper descendant of $u$.
+
+    % Let $u$ be a node in a rooted tree $T$. The subtree of $u$ is the part of $T$ that is ``at or below" $u$.
+
+    % In a rooted tree, a node is a leaf node if it has no children; otherwise it is an internal node.
+
+    % Let $T$ be a rooted tree where every internal node has at least 2 child nodes. If $m$ is the number of leaf nodes, then the number of internal nodes is at least $m-1$.
+
+    % A $k$-ary tree is a rooted tree where every internal node has at most $k$ child nodes.
+
+    % A $2$-ary tree is called a binary tree.
+
+    % Consider a binary tree with height $h$. Its level $n$ $(0 \leqslant n \leqslant h - 1)$ is full if it contains $2^n$. 
+
+    % A binary tree of height $h$ is complete if:
+
+    % \begin{itemize}
+    %     \item Levels $0, 1, ..., h-2$ are all full
+    %     \item At Level $h-1$, the leaf nodes are "as far left as possible"
+    % \end{itemize}
+
+    % A complete tree with $n \geqslant 2$ nodes has height $O(\log n)$
+
+
+    % \dirtree{%
+    %     .1 debug.
+    %     .2 filename.
+    %     .2 modules.
+    %     .3 module.
+    %     .3 module.
+    %     .3 module.
+    %     .2 level.
+    %     }
 
 
     
